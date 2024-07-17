@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="indexstyle.css">
+    <link rel="stylesheet" href="\static\indexstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -13,7 +13,7 @@
     <nav>
    <label class="logo">Form Portal</label>
     <ul>
-    <li ><a class="active" href="/home">Home</a></li>
+    <li ><a class="active" href="/">Home</a></li>
     <li>
         <div class="dashop">
             <a  class="active" href="/dashboard">DashBoard</a>
@@ -37,7 +37,9 @@
     </ul>
        
     </nav>
-
-<h1>HI  {{session["name"]}}</h1>
+    <div class="box" >
+            <button id="box1"><a href="/createform" >CREATE FORM</a></button> 
+            <button id="box2"><a href="/fillform">FILL FORM</a></button>
+    </div>
 </body>
 </html>

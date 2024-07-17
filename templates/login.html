@@ -4,19 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="\static\login.css">
   </head>
   <body>
+    <section>
     <form action="/loginsubmission" method="post">
-      Username :&nbsp;<input type="text" name="username" required /><br /><br />
-      Password :&nbsp;<input
+      Username <br><br>&nbsp;<input type="text" 
+      name="username" 
+      required style="background-color: #CBD5E0;"/><br /><br />
+      Password <br><br> &nbsp;<input
         type="password"
         name="password"
-        required
-      /><br /><br />
-      <button>Login</button>
+        required style="background-color: #CBD5E0;">
+        <br><br>
+      <button id="sub">Login</button>
       <br />
       <br />
-      <a href="/signup">Don't have account</a>
+      <a href="/signup" id="sub1">Don't have account</a>
     </form>
+  </section>
   </body>
 </html>

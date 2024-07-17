@@ -5,6 +5,10 @@
     text-decoration: none; 
     box-sizing: border-box; 
   }
+   
+  body{
+    background-color: #e6e7e9;
+  }
   .logo{
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       font-size: 50px;
@@ -14,7 +18,7 @@
   }
   nav{
       background-color: #CBD5E0;
-       
+      
   }
   nav ul{
       float: right;
@@ -70,8 +74,42 @@
       background-color:#b8c2c8 ;
       box-shadow: 2px 2px black;
   }
-  
+
   .acop:hover #acopid{
       display: block;
   }
+
+  .box button{
+    margin-top: 200px;
+    border-radius: 35px;
+    background-color:#CBD5E0 ;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    border-color: #CBD5E0;
+  }
+  #box1{
+    margin-left: 450px;
+  }
+  #box2{
+      margin-left: 100px; 
+  }
+  .box a{
+    color: black;
+    font-weight: bolder;
+  }
+  .box  a:hover{
+    color: white;
+  }
+  .box button:hover{
+    cursor: pointer;
+    background-color: #788594;
+    transition: .3s;
+  }
+  
+  
+  
+  
+  
+ 
   
