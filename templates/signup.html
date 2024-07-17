@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="/signupsubmission" method="post">
-    Enter your Name :&nbsp;<input type="text" name="name"><br><br>
-    Username :&nbsp;<input type="text" name="username"><br><br>
-    Password :&nbsp;<input type="password" name="password"><br><br>
-    Confirm Password :&nbsp;<input type="password" name="confirmpassword"><br><br>
-    <button>Submit</button>
-</form>
-</body>
+      Enter your Name :&nbsp;<input
+        type="text"
+        name="name"
+        required
+      /><br /><br />
+      Username :&nbsp;<input type="text" name="username" required /><br /><br />
+      Password :&nbsp;<input
+        type="password"
+        name="password"
+        required
+      /><br /><br />
+      Confirm Password :&nbsp;<input
+        type="password"
+        name="confirmpassword"
+        required
+      /><br /><br />
+      <button>Submit</button>
+      <br />
+      <br />
+      <a href="/login">Already have account</a>
+    </form>
+  </body>
 </html>
