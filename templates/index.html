@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="indexstyle.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
-  <body>
+    <link rel="stylesheet" href="indexstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    
     <nav>
-      <label class="logo">Form Portal</label>
-      <ul>
-        <li><a class="active" href="/home">Home</a></li>
-        <li><a class="active" href="/about">About</a></li>
-        <li><a class="active" href="/contactus">Contact Us</a></li>
-        <li>
-          <a class="active" href="#"><i class="fas fa-user-circle"></i></a>
-        </li>
-      </ul>
+   <label class="logo">Form Portal</label>
+    <ul>
+    <li ><a class="active" href="/home">Home</a></li>
+    <li>
+        <div class="dashop">
+            <a  class="active" href="/dashboard">DashBoard</a>
+            <div class="dashid">
+
+            </div>
+        </div>
+        
+    </li>
+    <li ><a class="active" href="/about">About</a></li>
+    <li ><a class="active" href="/contactus">Contact Us</a></li>
+    <li>
+        <div class="acop">
+            <a class="active" id="accounttab" href="#"  >Account</a>
+            <div class="acop" id="acopid" >
+               <a href="/login">Login</a>
+               <a href="/signup">SignUp</a>
+           </div> 
+      </div>
+    </li>
+    </ul>
+       
     </nav>
-    <li><a href="/login">Login</a></li>
-    <li><a href="/signup">SignUp</a></li>
-    <li><a href="/createform">Create Form</a></li>
-    <li><a href="/fillform">Fill Form</a></li>
-    <li><a href="/manageform">Manage Form</a></li>
-    <li><a href="/postedform">Posted Form</a></li>
-    <li><a href="/submittedform">Submitted Form</a></li>
-    <h1>HI {{session["username"]}}</h1>
-    <a href="/logout">Logout</a>
-  </body>
+
+<h1>HI  {{session["name"]}}</h1>
+</body>
 </html>

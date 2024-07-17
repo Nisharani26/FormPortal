@@ -1,44 +1,77 @@
 *{
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none; 
-  box-sizing: border-box; 
-}
-.logo{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 50px;
-    font-weight: bold;
-    line-height: 80px;
-    padding-left: 100px;
-}
-nav{
-    background-color: #CBD5E0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none; 
+    box-sizing: border-box; 
+  }
+  .logo{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 50px;
+      font-weight: bold;
+      line-height: 80px;
+      padding-left: 100px;
+  }
+  nav{
+      background-color: #CBD5E0;
+       
+  }
+  nav ul{
+      float: right;
+  }
+  nav ul li{
+      display: inline-block;
+      margin-top: 30px;
+      margin-right: 20px;
+      font-size: 20px;
      
-}
-nav ul{
-    float: right;
-}
-nav ul li{
-    display: inline-block;
-    margin-top: 30px;
-    margin-right: 20px;
-    font-size: 20px;
-   
-}
-nav ul li a:hover{
-    background: #b8c2c8;
-    transition: .3s;
-   
-}
-
-.active{
-    padding-right: 40px;
-    padding: 7px 15px;
-    border-radius: 6px;
-    color: black;
-    font-family:sans-serif;
-    font-weight:normal;
-    text-transform: uppercase; 
-}
-
+  }
+  nav ul li a:hover{
+      background: #b8c2c8;
+      transition: .3s;
+     
+  }
+  
+  .active{
+      padding-right: 40px;
+      padding: 7px 15px;
+      border-radius: 6px;
+      color: black;
+      font-family:sans-serif;
+      font-weight:normal;
+      text-transform: uppercase; 
+  }
+  #accounttab{
+     background-color: #415563; 
+     color: white;
+  }
+  #accounttab:hover{
+      background-color: rgb(84, 124, 142);
+      color: black;
+      transition: .5s;
+  }
+  #acopid a{
+      display: block;
+      width: 130px;
+      background-color: #a0a5ab;
+      color: rgb(1, 1, 1);
+      padding-left: 40px;
+      padding-top: 30px;
+      padding-right: 25px;
+      padding-bottom: 10px;
+  }
+  
+  #acopid{
+      position: absolute;
+      display:none;
+  }
+  
+  #acopid a:hover{
+      background-color:#b8c2c8 ;
+      box-shadow: 2px 2px black;
+  }
+  
+  .acop:hover #acopid{
+      display: block;
+  }
+  
