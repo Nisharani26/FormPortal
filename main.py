@@ -9,20 +9,31 @@ database_cursor=database_connection.cursor()
 app=Flask(__name__)
 app.secret_key="nisharani"
 
-
-@app.route('/home')
+@app.route('/')
 def home():
-    return render_template('index.html')
-   
-    
+    if "username" in session:
+        return render_template('index.html')
+    else:
+        return redirect('/login')
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    if "username" in session:
+        return redirect('/')
+    else:
+        return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.pop("username")
+    return redirect('/login')
    
 @app.route('/signup')
 def signup():
-    return render_template('signup.html')
+    if "username" in session:
+        return redirect('/')
+    else:
+        return render_template('signup.html')
 
 
 @app.route('/signupsubmission',methods=["POST"])
@@ -37,25 +48,34 @@ def signupsubmission():
     session["password"]=password
     session["confirmpassword"]=confirmpassword
 
-    database_cursor.execute("insert into user(name,username,password,confirmpassword) values(name,username,password,confirmpassword)")
+    database_cursor.execute("insert into user(name,username,password,confirmpassword) values(?,?,?,?)",(name,username,password,confirmpassword))
     database_connection.commit()
     database_connection.close()
-    return redirect('/')
+    return redirect('/login')
 
-@app.route('/loginsubmission',methods=["POST","Get"])
+@app.route('/loginsubmission',methods=["POST","GET"])
 def loginsubmission():
-    username=request.form["username"]
-    password=request.form["password"]
-    session["username"]=username
-    session["password"]=password
     if request.method=="POST":
-         if session["username"] =="nisha123":
-             return redirect('/')
-         else:
-             return "Invalid Username and password"
+        username=request.form["username"]
+        password=request.form["password"]
+        data = database_cursor.execute("SELECT password, username FROM USER WHERE username = ?",(username,)).fetchone()
+        if (data != None and password == data[0]):
+            print(data[0])
+            print(password)
+            session["username"]=username
+            print(session["username"])
+            return redirect('/')
+        else:
+            print(data[0])
+            print(password)
+            return "Invalid Username and password"
     else:
-        return render_template('login.html')
+        return redirect('/') 
     
+    # if data == None or password != data[0]:
+    #     return "Invalid"
+    # else:
+    #     return redirect('/')
 
 @app.route('/createform')
 def createform():
@@ -85,6 +105,9 @@ def about():
 def contactus():
     return render_template('contactus.html')
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
 
 
 if (__name__=="__main__"):
