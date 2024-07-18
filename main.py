@@ -1,11 +1,6 @@
 from flask import Flask,render_template,request,session,redirect 
 import sqlite3
 
-
-database_connection = sqlite3.connect('database.db',check_same_thread=False)
-#cursor is used to execute statements
-database_cursor=database_connection.cursor()
-
 app=Flask(__name__)
 app.secret_key="nisharani"
 
@@ -41,6 +36,8 @@ def signup():
 
 @app.route('/signupsubmission',methods=["POST"])
 def signupsubmission():
+    database_connection = sqlite3.connect('database.db',check_same_thread=False)
+    database_cursor=database_connection.cursor()
     name=request.form["name"]
     email=request.form["email"]
     username=request.form["username"]
@@ -52,7 +49,6 @@ def signupsubmission():
     session["username"]=username
     session["password"]=password
     session["confirmpassword"]=confirmpassword
-
     database_cursor.execute("insert into user(name,email,username,password,confirmpassword) values(?,?,?,?,?)",(name,email,username,password,confirmpassword))
     database_connection.commit()
     database_connection.close()
@@ -61,13 +57,22 @@ def signupsubmission():
 
 @app.route('/loginsubmission',methods=["POST","GET"])
 def loginsubmission():
+    
+
     if request.method=="POST":
         username=request.form["username"]
         password=request.form["password"]
+        database_connection = sqlite3.connect('database.db',check_same_thread=False)
+        database_cursor=database_connection.cursor()
+
         data = database_cursor.execute("SELECT password, username FROM USER WHERE username = ?",(username,)).fetchone()
+        database_connection.commit()
+        database_connection.close()
+        print(data)
+        print(password)
+        print(type(data[0])==type(password))
         if (data != None and password == data[0]):
-            print(data[0])
-            print(password)
+           
             session["username"]=username
             print(session["username"])
             return redirect('/')
