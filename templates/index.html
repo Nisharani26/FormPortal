@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="\static\indexstyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-<body>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="\static\indexstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
     <nav>
-   <label class="logo">Form Portal</label>
-    <ul>
-    <li ><a class="active" href="/">Home</a></li>
-    <li>
-        <div class="dashop">
-            <a  class="active" href="/dashboard">DashBoard</a>
-            <div class="dashid">
-
-            </div>
-        </div>
-        
-    </li>
-    <li ><a class="active" href="/about">About</a></li>
-    <li ><a class="active" href="/contactus">Contact Us</a></li>
-    <li>
-        <div class="acop">
-            <a class="active" id="accounttab" href="#"  >Account</a>
-            <div class="acop" id="acopid" >
-               <a href="/login">Login</a>
-               <a href="/signup">SignUp</a>
-           </div> 
-      </div>
-    </li>
-    </ul>
-       
+      <label class="logo">Formi</label>
+      <ul>
+        <li><a class="active" href="/">Home</a></li>
+        <li>
+          <div class="dashop">
+            <a class="active" href="/dashboard">DashBoard</a>
+            <div class="dashid"></div>
+          </div>
+        </li>
+        <li><a class="active" href="/about">About</a></li>
+        <li><a class="active" href="/contactus">Contact Us</a></li>
+        <li>
+          <div class="acop">
+            {% if session["username"]: %}
+            <a class="active" id="accounttab" href="/logout">Logout</a>
+            {% endif %}
+            <a class="active" id="accounttab" href="/login">Account</a>
+            <!-- <div class="acop" id="acopid">
+              <a href="/login">Login</a>
+              <a href="/signup">SignUp</a>
+            </div> -->
+          </div>
+        </li>
+      </ul>
     </nav>
-    <div class="box" >
-            <button id="box1"><a href="/createform" >CREATE FORM</a></button> 
-            <button id="box2"><a href="/fillform">FILL FORM</a></button>
+    <h1>{{ session["username"]}}</h1>
+    <div class="box">
+      <button id="box1"><a href="/createform">CREATE FORM</a></button>
+      <button id="box2"><a href="/fillform">FILL FORM</a></button>
     </div>
-</body>
+  </body>
 </html>

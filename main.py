@@ -12,13 +12,14 @@ app.secret_key="nisharani"
 @app.route('/')
 def home():
     return render_template('index.html')
-    #if "username" in session:
+    # if "username" in session:
     #    return render_template('index.html')
-    #else:
+    # else:
     #    return redirect('/login')
 
 @app.route('/login')
 def login():
+    # return render_template('login.html')
     if "username" in session:
         return redirect('/')
     else:
@@ -31,6 +32,7 @@ def logout():
    
 @app.route('/signup')
 def signup():
+    # print("signup"+username)
     if "username" in session:
         return redirect('/')
     else:
@@ -54,7 +56,8 @@ def signupsubmission():
     database_cursor.execute("insert into user(name,email,username,password,confirmpassword) values(?,?,?,?,?)",(name,email,username,password,confirmpassword))
     database_connection.commit()
     database_connection.close()
-    return redirect('/login')
+    print(session["username"])
+    return redirect('/signup')
 
 @app.route('/loginsubmission',methods=["POST","GET"])
 def loginsubmission():
