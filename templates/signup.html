@@ -3,30 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FormPortal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="\static\signup.css" />
   </head>
   <body>
-    <form action="/signupsubmission" method="post">
-      Enter your Name :&nbsp;<input
-        type="text"
-        name="name"
-        required
-      /><br /><br />
-      Username :&nbsp;<input type="text" name="username" required /><br /><br />
-      Password :&nbsp;<input
-        type="password"
-        name="password"
-        required
-      /><br /><br />
-      Confirm Password :&nbsp;<input
-        type="password"
-        name="confirmpassword"
-        required
-      /><br /><br />
-      <button>Submit</button>
-      <br />
-      <br />
-      <a href="/login">Already have account</a>
-    </form>
+    <section>
+      <form action="/signupsubmission" method="post">
+        Enter your Name <br /><br />&nbsp;<input
+          type="text"
+          name="name"
+          required
+          style="background-color: #cbd5e0"
+        /><br /><br />
+        Email <br />
+        <br />&nbsp;<input
+          type="email"
+          name="email"
+          required
+          style="background-color: #cbd5e0"
+        /><br /><br />
+        Username <br /><br />&nbsp;<input
+          type="text"
+          name="username"
+          required
+          style="background-color: #cbd5e0"
+        /><br /><br />
+        Password <br /><br />
+        &nbsp;<input
+          type="password"
+          name="password"
+          required
+          style="background-color: #cbd5e0"
+        /><br /><br />
+        Confirm Password <br /><br />
+        &nbsp;<input
+          type="password"
+          name="confirmpassword"
+          required
+          style="background-color: #cbd5e0"
+        /><br /><br />
+        <button id="sub">Sign Up</button>
+        <br />
+        <br />
+        <a href="/login" id="sub1">Already have account </a>
+      </form>
+    </section>
   </body>
 </html>
