@@ -1,0 +1,23 @@
+<nav>
+  <label class="logo">Formi</label>
+  <ul>
+    <li><a class="active" href="/">Home</a></li>
+    <li>
+      <div class="dashop">
+        <a class="active" href="/dashboard">DashBoard</a>
+        <div class="dashid"></div>
+      </div>
+    </li>
+    <li><a class="active" href="/about">About</a></li>
+    <li><a class="active" href="/contactus">Contact Us</a></li>
+    <li>
+      <div class="acop">
+        {% if session["username"]: %}
+        <a class="active" id="accounttab" href="/logout">Logout</a>
+        {% else %}
+        <a class="active" id="accounttab" href="/login">Account</a>
+        {% endif %}
+      </div>
+    </li>
+  </ul>
+</nav>

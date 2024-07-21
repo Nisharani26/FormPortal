@@ -17,36 +17,14 @@
     />
   </head>
   <body>
-    <nav>
-      <label class="logo">Formi</label>
-      <ul>
-        <li><a class="active" href="/">Home</a></li>
-        <li>
-          <div class="dashop">
-            <a class="active" href="/dashboard">DashBoard</a>
-            <div class="dashid"></div>
-          </div>
-        </li>
-        <li><a class="active" href="/about">About</a></li>
-        <li><a class="active" href="/contactus">Contact Us</a></li>
-        <li>
-          <div class="acop">
-            {% if session["username"]: %}
-            <a class="active" id="accounttab" href="/logout">Logout</a>
-            {% endif %}
-            <a class="active" id="accounttab" href="/login">Account</a>
-            <!-- <div class="acop" id="acopid">
-              <a href="/login">Login</a>
-              <a href="/signup">SignUp</a>
-            </div> -->
-          </div>
-        </li>
-      </ul>
-    </nav>
+    {% include("nav.html") %}
     <h1>{{ session["username"]}}</h1>
     <div class="box">
-      <button id="box1"><a href="/createform">CREATE FORM</a></button>
-      <button id="box2"><a href="/fillform">FILL FORM</a></button>
+      <button id="box1"><a href="/dashboard/createform">CREATE FORM</a></button>
+      <button id="box2"><a href="/dashboard/fillform">FILL FORM</a></button>
     </div>
+    <footer class="footer">
+      Copyright  2024 All Rights Reserved.  
+    </footer>
   </body>
 </html>
