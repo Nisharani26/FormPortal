@@ -17,6 +17,7 @@
     />
   </head>
   <body>
+<<<<<<< HEAD
     <nav>
       <label class="logo">Formi</label>
       <ul>
@@ -42,10 +43,16 @@
         </li>
       </ul>
     </nav>
+=======
+    {% include("nav.html") %}
+>>>>>>> a01280738bf4b5c0cce6e729364e4dbbf81f566f
     <h1>{{ session["username"]}}</h1>
     <div class="box">
-      <button id="box1"><a href="/createform">CREATE FORM</a></button>
-      <button id="box2"><a href="/fillform">FILL FORM</a></button>
+      <button id="box1"><a href="/dashboard/createform">CREATE FORM</a></button>
+      <button id="box2"><a href="/dashboard/fillform">FILL FORM</a></button>
     </div>
+    <footer class="footer">
+      Copyright  2024 All Rights Reserved.  
+    </footer>
   </body>
 </html>

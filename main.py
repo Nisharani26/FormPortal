@@ -64,7 +64,6 @@ def loginsubmission():
         password=request.form["password"]
         database_connection = sqlite3.connect('database.db',check_same_thread=False)
         database_cursor=database_connection.cursor()
-
         data = database_cursor.execute("SELECT password, username FROM USER WHERE username = ?",(username,)).fetchone()
         database_connection.commit()
         database_connection.close()
@@ -72,7 +71,6 @@ def loginsubmission():
         print(password)
         print(type(data[0])==type(password))
         if (data != None and password == data[0]):
-           
             session["username"]=username
             print(session["username"])
             return redirect('/')
@@ -88,23 +86,23 @@ def loginsubmission():
     # else:
     #     return redirect('/')
 
-@app.route('/createform')
+@app.route('/dashboard/createform')
 def createform():
     return render_template('createform.html')
 
-@app.route('/fillform')
+@app.route('/dashboard/fillform')
 def fillform():
     return render_template('fillform.html')
 
-@app.route('/manageform')
+@app.route('/dashboard/manageform')
 def manageform():
     return render_template('manageform.html')
 
-@app.route('/postedform')
+@app.route('/dashboard/postedform')
 def postedform():
     return render_template('postedform.html')
 
-@app.route('/submittedform')
+@app.route('/dashboard/submittedform')
 def submittedform():
     return render_template('submittedform.html')
 
@@ -118,7 +116,7 @@ def contactus():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    return render_template('createform.html')
 
 
 if (__name__=="__main__"):
