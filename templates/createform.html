@@ -15,7 +15,35 @@
   </head>
   <body>
     {% include("nav.html") %}
-    {% include("dashboardSideMenu.html") %}
-    
+    <div
+      style="
+        background-color: aqua;
+        height: 100%;
+        padding: 10px;
+        /* margin-block: 20px; */
+        display: flex;
+      "
+    >
+      {% include("dashboardSideMenu.html") %}
+      <div
+        class="main"
+        style="
+          background-color: burlywood;
+          height: 100%;
+          width: 100%;
+          padding: 15px;
+          /* margin-block: 20px; */
+          /* justify-items: center; */
+        "
+      >
+        <div class="create-form-menus" style="padding: 10px">
+          <button>Add Questions</button>
+          <button>Add Image</button>
+          <button>Add Video</button>
+          <button>Add Text</button>
+        </div>
+        <div></div>
+      </div>
+    </div>
   </body>
 </html>

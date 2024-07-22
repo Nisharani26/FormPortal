@@ -57,8 +57,6 @@ def signupsubmission():
 
 @app.route('/loginsubmission',methods=["POST","GET"])
 def loginsubmission():
-    
-
     if request.method=="POST":
         username=request.form["username"]
         password=request.form["password"]
@@ -69,22 +67,15 @@ def loginsubmission():
         database_connection.close()
         print(data)
         print(password)
-        print(type(data[0])==type(password))
+        # print(type(data[0])==type(password))
         if (data != None and password == data[0]):
             session["username"]=username
             print(session["username"])
             return redirect('/')
         else:
-            print(data[0])
-            print(password)
             return "Invalid Username and password"
     else:
         return redirect('/') 
-    
-    # if data == None or password != data[0]:
-    #     return "Invalid"
-    # else:
-    #     return redirect('/')
 
 @app.route('/dashboard/createform')
 def createform():
@@ -117,7 +108,6 @@ def contactus():
 @app.route('/dashboard')
 def dashboard():
     return render_template('createform.html')
-
 
 if (__name__=="__main__"):
     app.run(debug=True)
