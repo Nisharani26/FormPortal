@@ -1,0 +1,8 @@
+.create-form-menus button{
+    margin-right: 60px;
+    margin-left: 60px;
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 15px;
+    font-weight: bolder;
+}
